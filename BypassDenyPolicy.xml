@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SiPolicy xmlns="urn:schemas-microsoft-com:sipolicy">
+  <VersionEx>1.0</VersionEx>
+  <PolicyTypeID>{A244370E-44C9-4C06-B551-F6016E563076}</PolicyTypeID>
+  <PlatformID>{2E07F7E4-194C-4D20-B7C9-6F44A6C5A234}</PlatformID>
+  <Rules />
+  <!--EKUS-->
+  <EKUs />
+  <!--File Rules-->
+  <FileRules>
+    <FileAttrib ID="ID_FILEATTRIB_F_1_0" FriendlyName="cdb.exe" FileName="CDB.Exe" MinimumFileVersion="99.0.0.0" />
+    <FileAttrib ID="ID_FILEATTRIB_F_2_0" FriendlyName="kd.exe" FileName="kd.exe" MinimumFileVersion="99.0.0.0" />
+    <FileAttrib ID="ID_FILEATTRIB_F_3_0" FriendlyName="windbg.exe" FileName="windbg.exe" MinimumFileVersion="99.0.0.0" />
+    <FileAttrib ID="ID_FILEATTRIB_F_4_0" FriendlyName="MSBuild.exe" FileName="MSBuild.exe" MinimumFileVersion="99.0.0.0" />
+  </FileRules>
+  <!--Signers-->
+  <Signers>
+    <Signer ID="ID_SIGNER_F_1_0" Name="Microsoft Code Signing PCA">
+      <CertRoot Type="TBS" Value="27543A3F7612DE2261C7228321722402F63A07DE" />
+      <CertPublisher Value="Microsoft Corporation" />
+      <FileAttribRef RuleID="ID_FILEATTRIB_F_1_0" />
+      <FileAttribRef RuleID="ID_FILEATTRIB_F_2_0" />
+      <FileAttribRef RuleID="ID_FILEATTRIB_F_3_0" />
+      <FileAttribRef RuleID="ID_FILEATTRIB_F_4_0" />
+    </Signer>
+    <Signer ID="ID_SIGNER_F_2_0" Name="Microsoft Code Signing PCA 2010">
+      <CertRoot Type="TBS" Value="121AF4B922A74247EA49DF50DE37609CC1451A1FE06B2CB7E1E079B492BD8195" />
+      <CertPublisher Value="Microsoft Corporation" />
+      <FileAttribRef RuleID="ID_FILEATTRIB_F_1_0" />
+      <FileAttribRef RuleID="ID_FILEATTRIB_F_2_0" />
+      <FileAttribRef RuleID="ID_FILEATTRIB_F_3_0" />
+    </Signer>
+    <Signer ID="ID_SIGNER_F_3_0" Name="Microsoft Code Signing PCA 2011">
+      <CertRoot Type="TBS" Value="F6F717A43AD9ABDDC8CEFDDE1C505462535E7D1307E630F9544A2D14FE8BF26E" />
+      <CertPublisher Value="Microsoft Corporation" />
+      <FileAttribRef RuleID="ID_FILEATTRIB_F_4_0" />
+    </Signer>
+    <Signer ID="ID_SIGNER_F_4_0" Name="Microsoft Windows Production PCA 2011">
+      <CertRoot Type="TBS" Value="4E80BE107C860DE896384B3EFF50504DC2D76AC7151DF3102A4450637A032146" />
+      <CertPublisher Value="Microsoft Windows" />
+      <FileAttribRef RuleID="ID_FILEATTRIB_F_4_0" />
+    </Signer>
+  </Signers>
+  <!--Driver Signing Scenarios-->
+  <SigningScenarios>
+    <SigningScenario Value="12" ID="ID_SIGNINGSCENARIO_WINDOWS" FriendlyName="User-mode binary denied signers">
+      <ProductSigners>
+        <DeniedSigners>
+          <DeniedSigner SignerId="ID_SIGNER_F_1_0" />
+          <DeniedSigner SignerId="ID_SIGNER_F_2_0" />
+          <DeniedSigner SignerId="ID_SIGNER_F_3_0" />
+          <DeniedSigner SignerId="ID_SIGNER_F_4_0" />
+        </DeniedSigners>
+      </ProductSigners>
+    </SigningScenario>
+  </SigningScenarios>
+  <UpdatePolicySigners />
+  <CiSigners>
+    <CiSigner SignerId="ID_SIGNER_F_1_0" />
+    <CiSigner SignerId="ID_SIGNER_F_2_0" />
+    <CiSigner SignerId="ID_SIGNER_F_3_0" />
+    <CiSigner SignerId="ID_SIGNER_F_4_0" />
+  </CiSigners>
+  <HvciOptions />
+</SiPolicy>
