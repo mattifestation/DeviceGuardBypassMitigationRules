@@ -30,7 +30,7 @@
     <FileAttrib ID="ID_FILEATTRIB_F_2_0_0" FriendlyName="kd.exe" FileName="kd.exe" MinimumFileVersion="99.0.0.0" />
     <FileAttrib ID="ID_FILEATTRIB_F_3_0_0" FriendlyName="windbg.exe" FileName="windbg.exe" MinimumFileVersion="99.0.0.0" />
     <FileAttrib ID="ID_FILEATTRIB_F_4_0_0" FriendlyName="MSBuild.exe" FileName="MSBuild.exe" MinimumFileVersion="99.0.0.0" />
-    <FileAttrib ID="ID_FILEATTRIB_F_5_0_0" FriendlyName="csi.exe FileAttribute" FileName="csi.exe" MinimumFileVersion="99.0.0.0" />
+    <FileAttrib ID="ID_FILEATTRIB_F_5_0_0" FriendlyName="csi.exe" FileName="csi.exe" MinimumFileVersion="99.0.0.0" />
   </FileRules>
   <!--Signers-->
   <Signers>
