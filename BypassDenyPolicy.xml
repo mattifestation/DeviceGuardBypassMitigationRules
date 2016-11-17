@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <SiPolicy xmlns="urn:schemas-microsoft-com:sipolicy">
-  <VersionEx>1.2</VersionEx>
+  <VersionEx>1.3.0.0</VersionEx>
   <PolicyTypeID>{A244370E-44C9-4C06-B551-F6016E563076}</PolicyTypeID>
   <PlatformID>{2E07F7E4-194C-4D20-B7C9-6F44A6C5A234}</PlatformID>
   <Rules>
@@ -26,11 +26,12 @@
   <EKUs />
   <!--File Rules-->
   <FileRules>
-    <FileAttrib ID="ID_FILEATTRIB_F_1_0_0" FriendlyName="cdb.exe" FileName="CDB.Exe" MinimumFileVersion="99.0.0.0" />
-    <FileAttrib ID="ID_FILEATTRIB_F_2_0_0" FriendlyName="kd.exe" FileName="kd.exe" MinimumFileVersion="99.0.0.0" />
-    <FileAttrib ID="ID_FILEATTRIB_F_3_0_0" FriendlyName="windbg.exe" FileName="windbg.exe" MinimumFileVersion="99.0.0.0" />
-    <FileAttrib ID="ID_FILEATTRIB_F_4_0_0" FriendlyName="MSBuild.exe" FileName="MSBuild.exe" MinimumFileVersion="99.0.0.0" />
-    <FileAttrib ID="ID_FILEATTRIB_F_5_0_0" FriendlyName="csi.exe" FileName="csi.exe" MinimumFileVersion="99.0.0.0" />
+    <FileAttrib ID="ID_FILEATTRIB_F_1_0_0" FriendlyName="cdb.exe" FileName="CDB.Exe" MinimumFileVersion="999.999.999.999" />
+    <FileAttrib ID="ID_FILEATTRIB_F_2_0_0" FriendlyName="kd.exe" FileName="kd.exe" MinimumFileVersion="999.999.999.999" />
+    <FileAttrib ID="ID_FILEATTRIB_F_3_0_0" FriendlyName="windbg.exe" FileName="windbg.exe" MinimumFileVersion="999.999.999.999" />
+    <FileAttrib ID="ID_FILEATTRIB_F_4_0_0" FriendlyName="MSBuild.exe" FileName="MSBuild.exe" MinimumFileVersion="999.999.999.999" />
+    <FileAttrib ID="ID_FILEATTRIB_F_5_0_0" FriendlyName="csi.exe" FileName="csi.exe" MinimumFileVersion="999.999.999.999" />
+    <FileAttrib ID="ID_FILEATTRIB_F_6_0_0" FriendlyName="dnx.exe" FileName="dnx.exe" MinimumFileVersion="999.999.999.999" />
   </FileRules>
   <!--Signers-->
   <Signers>
@@ -54,6 +55,7 @@
       <CertPublisher Value="Microsoft Corporation" />
       <FileAttribRef RuleID="ID_FILEATTRIB_F_4_0_0" />
       <FileAttribRef RuleID="ID_FILEATTRIB_F_5_0_0" />
+      <FileAttribRef RuleID="ID_FILEATTRIB_F_6_0_0" />
     </Signer>
     <Signer ID="ID_SIGNER_F_4_0_0" Name="Microsoft Windows Production PCA 2011">
       <CertRoot Type="TBS" Value="4E80BE107C860DE896384B3EFF50504DC2D76AC7151DF3102A4450637A032146" />
