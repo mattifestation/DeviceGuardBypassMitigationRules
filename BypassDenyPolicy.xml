@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SiPolicy xmlns="urn:schemas-microsoft-com:sipolicy">
-  <VersionEx>1.3.2.0</VersionEx>
+  <VersionEx>1.3.3.0</VersionEx>
   <PolicyTypeID>{A244370E-44C9-4C06-B551-F6016E563076}</PolicyTypeID>
   <PlatformID>{2E07F7E4-194C-4D20-B7C9-6F44A6C5A234}</PlatformID>
   <Rules>
@@ -34,6 +34,7 @@
     <FileAttrib ID="ID_FILEATTRIB_F_6" FriendlyName="dnx.exe" FileName="dnx.exe" MinimumFileVersion="999.999.999.999" />
     <FileAttrib ID="ID_FILEATTRIB_F_7" FriendlyName="rcsi.exe" FileName="rcsi.exe" MinimumFileVersion="999.999.999.999" />
     <FileAttrib ID="ID_FILEATTRIB_F_8" FriendlyName="ntsd.exe" FileName="ntsd.exe" MinimumFileVersion="999.999.999.999" />
+    <FileAttrib ID="ID_FILEATTRIB_F_9" FriendlyName="bginfo.exe" FileName="Bginfo.exe" MinimumFileVersion="4.21.0.0" />
   </FileRules>
   <!--Signers-->
   <Signers>
@@ -46,6 +47,7 @@
       <FileAttribRef RuleID="ID_FILEATTRIB_F_4" />
       <FileAttribRef RuleID="ID_FILEATTRIB_F_7" />
       <FileAttribRef RuleID="ID_FILEATTRIB_F_8" />
+      <FileAttribRef RuleID="ID_FILEATTRIB_F_9" />
     </Signer>
     <Signer ID="ID_SIGNER_F_2" Name="Microsoft Code Signing PCA 2010">
       <CertRoot Type="TBS" Value="121AF4B922A74247EA49DF50DE37609CC1451A1FE06B2CB7E1E079B492BD8195" />
@@ -61,6 +63,7 @@
       <FileAttribRef RuleID="ID_FILEATTRIB_F_4" />
       <FileAttribRef RuleID="ID_FILEATTRIB_F_5" />
       <FileAttribRef RuleID="ID_FILEATTRIB_F_6" />
+      <FileAttribRef RuleID="ID_FILEATTRIB_F_9" />
     </Signer>
     <Signer ID="ID_SIGNER_F_4" Name="Microsoft Windows Production PCA 2011">
       <CertRoot Type="TBS" Value="4E80BE107C860DE896384B3EFF50504DC2D76AC7151DF3102A4450637A032146" />
