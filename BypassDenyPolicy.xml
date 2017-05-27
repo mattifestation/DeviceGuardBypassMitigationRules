@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <SiPolicy xmlns="urn:schemas-microsoft-com:sipolicy">
-  <VersionEx>1.3.3.0</VersionEx>
+  <VersionEx>1.4.0.0</VersionEx>
   <PolicyTypeID>{A244370E-44C9-4C06-B551-F6016E563076}</PolicyTypeID>
   <PlatformID>{2E07F7E4-194C-4D20-B7C9-6F44A6C5A234}</PlatformID>
   <Rules>
@@ -22,76 +22,46 @@
       <Option>Enabled:UMCI</Option>
     </Rule>
   </Rules>
-  <!--EKUS-->
   <EKUs />
-  <!--File Rules-->
   <FileRules>
-    <FileAttrib ID="ID_FILEATTRIB_F_1" FriendlyName="cdb.exe" FileName="CDB.Exe" MinimumFileVersion="999.999.999.999" />
-    <FileAttrib ID="ID_FILEATTRIB_F_2" FriendlyName="kd.exe" FileName="kd.exe" MinimumFileVersion="999.999.999.999" />
-    <FileAttrib ID="ID_FILEATTRIB_F_3" FriendlyName="windbg.exe" FileName="windbg.exe" MinimumFileVersion="999.999.999.999" />
-    <FileAttrib ID="ID_FILEATTRIB_F_4" FriendlyName="MSBuild.exe" FileName="MSBuild.exe" MinimumFileVersion="999.999.999.999" />
-    <FileAttrib ID="ID_FILEATTRIB_F_5" FriendlyName="csi.exe" FileName="csi.exe" MinimumFileVersion="999.999.999.999" />
-    <FileAttrib ID="ID_FILEATTRIB_F_6" FriendlyName="dnx.exe" FileName="dnx.exe" MinimumFileVersion="999.999.999.999" />
-    <FileAttrib ID="ID_FILEATTRIB_F_7" FriendlyName="rcsi.exe" FileName="rcsi.exe" MinimumFileVersion="999.999.999.999" />
-    <FileAttrib ID="ID_FILEATTRIB_F_8" FriendlyName="ntsd.exe" FileName="ntsd.exe" MinimumFileVersion="999.999.999.999" />
-    <FileAttrib ID="ID_FILEATTRIB_F_9" FriendlyName="bginfo.exe" FileName="Bginfo.exe" MinimumFileVersion="4.21.0.0" />
+    <!--One of the best bypasses to date from Casey Smith (@subTee) (http://subt0x10.blogspot.com/2017/04/bypassing-application-whitelisting.html)-->
+    <Deny ID="ID_DENY_MSBUILD" FriendlyName="MSBuild.exe" FileName="MSBuild.exe" MinimumFileVersion="65535.65535.65535.65535" />
+    <!--(https://web.archive.org/web/20161008143428/http://subt0x10.blogspot.com/2016/09/application-whitelisting-bypass-csiexe.html) via Casey Smith (@subTee)-->
+    <Deny ID="ID_DENY_CSI" FriendlyName="csi.exe" FileName="csi.exe" MinimumFileVersion="65535.65535.65535.65535" />
+    <!--(https://enigma0x3.net/2016/11/17/bypassing-application-whitelisting-by-using-dnx-exe/) via Matt Nelson (@enigma0x3)-->
+    <Deny ID="ID_DENY_DNX" FriendlyName="dnx.exe" FileName="dnx.exe" MinimumFileVersion="65535.65535.65535.65535" />
+    <!--(https://enigma0x3.net/2016/11/21/bypassing-application-whitelisting-by-using-rcsi-exe/) via Matt Nelson (@enigma0x3)-->
+    <Deny ID="ID_DENY_RCSI" FriendlyName="rcsi.exe" FileName="rcsi.exe" MinimumFileVersion="65535.65535.65535.65535" />
+    <!--Signed debuggers via Matt Graeber (@mattifestation). (http://www.exploit-monday.com/2016/08/windbg-cdb-shellcode-runner.html)-->
+    <Deny ID="ID_DENY_KD" FriendlyName="kd.exe" FileName="kd.exe" MinimumFileVersion="65535.65535.65535.65535" />
+    <Deny ID="ID_DENY_WINDBG" FriendlyName="windbg.exe" FileName="windbg.exe" MinimumFileVersion="65535.65535.65535.65535" />
+    <Deny ID="ID_DENY_CDB" FriendlyName="cdb.exe" FileName="CDB.Exe" MinimumFileVersion="65535.65535.65535.65535" />
+    <!--Another signed debugger. Credit to Matt Nelson (@enigma0x3) for suggesting this.-->
+    <Deny ID="ID_DENY_NTSD" FriendlyName="ntsd.exe" FileName="ntsd.exe" MinimumFileVersion="65535.65535.65535.65535" />
+    <!--Versions of BGInfo prior to 4.22.0.0 were vulnerable to an app-whitelisting bypass (https://msitpros.com/?p=3831). Thanks Oddvar Moe (@Oddvarmoe)!-->
+    <Deny ID="ID_DENY_BGINFO" FriendlyName="Bginfo.exe" FileName="Bginfo.exe" MinimumFileVersion="4.21.0.0" />
   </FileRules>
-  <!--Signers-->
-  <Signers>
-    <Signer ID="ID_SIGNER_F_1" Name="Microsoft Code Signing PCA">
-      <CertRoot Type="TBS" Value="27543A3F7612DE2261C7228321722402F63A07DE" />
-      <CertPublisher Value="Microsoft Corporation" />
-      <FileAttribRef RuleID="ID_FILEATTRIB_F_1" />
-      <FileAttribRef RuleID="ID_FILEATTRIB_F_2" />
-      <FileAttribRef RuleID="ID_FILEATTRIB_F_3" />
-      <FileAttribRef RuleID="ID_FILEATTRIB_F_4" />
-      <FileAttribRef RuleID="ID_FILEATTRIB_F_7" />
-      <FileAttribRef RuleID="ID_FILEATTRIB_F_8" />
-      <FileAttribRef RuleID="ID_FILEATTRIB_F_9" />
-    </Signer>
-    <Signer ID="ID_SIGNER_F_2" Name="Microsoft Code Signing PCA 2010">
-      <CertRoot Type="TBS" Value="121AF4B922A74247EA49DF50DE37609CC1451A1FE06B2CB7E1E079B492BD8195" />
-      <CertPublisher Value="Microsoft Corporation" />
-      <FileAttribRef RuleID="ID_FILEATTRIB_F_1" />
-      <FileAttribRef RuleID="ID_FILEATTRIB_F_2" />
-      <FileAttribRef RuleID="ID_FILEATTRIB_F_3" />
-      <FileAttribRef RuleID="ID_FILEATTRIB_F_8" />
-    </Signer>
-    <Signer ID="ID_SIGNER_F_3" Name="Microsoft Code Signing PCA 2011">
-      <CertRoot Type="TBS" Value="F6F717A43AD9ABDDC8CEFDDE1C505462535E7D1307E630F9544A2D14FE8BF26E" />
-      <CertPublisher Value="Microsoft Corporation" />
-      <FileAttribRef RuleID="ID_FILEATTRIB_F_4" />
-      <FileAttribRef RuleID="ID_FILEATTRIB_F_5" />
-      <FileAttribRef RuleID="ID_FILEATTRIB_F_6" />
-      <FileAttribRef RuleID="ID_FILEATTRIB_F_9" />
-    </Signer>
-    <Signer ID="ID_SIGNER_F_4" Name="Microsoft Windows Production PCA 2011">
-      <CertRoot Type="TBS" Value="4E80BE107C860DE896384B3EFF50504DC2D76AC7151DF3102A4450637A032146" />
-      <CertPublisher Value="Microsoft Windows" />
-      <FileAttribRef RuleID="ID_FILEATTRIB_F_4" />
-    </Signer>
-  </Signers>
-  <!--Driver Signing Scenarios-->
+  <Signers />
   <SigningScenarios>
     <SigningScenario Value="131" ID="ID_SIGNINGSCENARIO_DRIVERS_1" FriendlyName="Kernel-mode deny rules">
       <ProductSigners />
     </SigningScenario>
     <SigningScenario Value="12" ID="ID_SIGNINGSCENARIO_WINDOWS" FriendlyName="User-mode deny rules">
       <ProductSigners>
-        <DeniedSigners>
-          <DeniedSigner SignerId="ID_SIGNER_F_1" />
-          <DeniedSigner SignerId="ID_SIGNER_F_2" />
-          <DeniedSigner SignerId="ID_SIGNER_F_3" />
-          <DeniedSigner SignerId="ID_SIGNER_F_4" />
-        </DeniedSigners>
+        <FileRulesRef>
+          <FileRuleRef RuleID="ID_DENY_MSBUILD" />
+          <FileRuleRef RuleID="ID_DENY_CSI" />
+          <FileRuleRef RuleID="ID_DENY_DNX" />
+          <FileRuleRef RuleID="ID_DENY_RCSI" />
+          <FileRuleRef RuleID="ID_DENY_KD" />
+          <FileRuleRef RuleID="ID_DENY_WINDBG" />
+          <FileRuleRef RuleID="ID_DENY_CDB" />
+          <FileRuleRef RuleID="ID_DENY_NTSD" />
+          <FileRuleRef RuleID="ID_DENY_BGINFO" />
+        </FileRulesRef>
       </ProductSigners>
     </SigningScenario>
   </SigningScenarios>
   <UpdatePolicySigners />
-  <CiSigners>
-    <CiSigner SignerId="ID_SIGNER_F_1" />
-    <CiSigner SignerId="ID_SIGNER_F_2" />
-    <CiSigner SignerId="ID_SIGNER_F_3" />
-    <CiSigner SignerId="ID_SIGNER_F_4" />
-  </CiSigners>
+  <CiSigners />
 </SiPolicy>
