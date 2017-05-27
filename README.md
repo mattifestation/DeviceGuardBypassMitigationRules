@@ -3,7 +3,7 @@ A reference Device Guard code integrity policy consisting of FilePublisher deny 
 
 As new Device Guard configuration bypasses are published, this reference policy will be updated with deny rules for the offending binaries. Generally speaking, the rules that will be published here will reflect signed Microsoft user-mode binaries that circumvent user-mode code integrity (UMCI). All code integrity policies will require that Microsoft binaries be trusted to a great extent, therefore it is reasonable to assume that a binary that executes arbitrary, unsigned code is a valid device guard configuration bypass.
 
-If you believe this is missing a published bypass, please file a GitHub issue linking to the published bypass. I also ask that you validate these rules on your system. I can only obtain so many versions of the bypass binaries so there may be a version out there that was signed with a different code signing certificate that I'm not tracking. If that's the case, pelase let me know, provide the binary, and I will promptly update the policy. Thank you!
+If you believe this is missing a published bypass, please file a GitHub issue linking to the published bypass. I also ask that you validate these rules on your system. I can only obtain so many versions of the bypass binaries so there may be a version out there that was signed with a different code signing certificate that I'm not tracking. If that's the case, please let me know, provide the binary, and I will promptly update the policy. Thank you!
 
 You can use the following code snippet to easily merge this policy with your existing code integrity policy:
 
